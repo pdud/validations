@@ -1,0 +1,30 @@
+<form>
+  <div class="first-name">
+    {{input value=user.firstName placeholder="First Name"}}
+    {{#if (v-get this 'user.firstName' 'isInvalid')}}
+      <span class="error">
+        {{v-get this 'user.firstName' 'message'}}
+      </span>
+    {{/if}}
+  </div>
+
+  <div class="last-name">
+    {{input value=user.lastName placeholder="Last Name"}}
+    {{#if (v-get this 'user.lastName' 'isInvalid')}}
+      <span class="error">
+        {{v-get this 'user.lastName' 'message'}}
+      </span>
+    {{/if}}
+  </div>
+
+  <div class="email">
+    {{input value=user.email placeholder="Email"}}
+    {{#if (v-get this 'email' 'isInvalid')}}
+      <span class="error">
+        {{v-get this 'email' 'message'}}
+      </span>
+    {{/if}}
+  </div>
+
+  <button type="submit" disabled={{v-get this 'isInvalid'}}>Submit</button>
+</form>
